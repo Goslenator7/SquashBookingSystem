@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.HashMap;
 
 public class demoBooking {
@@ -19,7 +20,7 @@ public class demoBooking {
         Court court4 = new Court();
         Court court5 = new Court();
 
-        HashMap<String, Day> daysOfWeek = new HashMap<>();
+        HashMap<String, Day> daysOfWeek = new HashMap<String, Day>();
         daysOfWeek.put("Monday", monday);
         daysOfWeek.put("Tuesday", tuesday);
         daysOfWeek.put("Wednesday", wednesday);
@@ -35,9 +36,9 @@ public class demoBooking {
         courtsOnDay.put("Court 4", court4);
         courtsOnDay.put("Court 5", court5);
 
-        court1.bookCourt();
-        court2.bookCourt();
-        court1.bookCourt();
+
+        //court2.bookCourt();
+        //court1.bookCourt();
 
         court1.cancelBooking();
 
