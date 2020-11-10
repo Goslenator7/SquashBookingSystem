@@ -2,16 +2,17 @@ import java.util.HashMap;
 
 public class Day {
 
-    private HashMap<String, Court> theCourts = new HashMap<>();
+    private HashMap<String, HashMap<Double, String>> aDay = new HashMap<>();
 
 
     // Getters and setters
 
-    public HashMap<String, Court> getTheCourts() {
-        return theCourts;
+    public HashMap<String, HashMap<Double, String>> getADay() {
+        return aDay;
     }
 
-    public void setTheCourts(HashMap<String, Court> theCourts) {
-        this.theCourts = theCourts;
+    public void setADay(HashMap<String, HashMap<Double, String>> aDay) {
+        this.aDay = aDay;
     }
+
 }

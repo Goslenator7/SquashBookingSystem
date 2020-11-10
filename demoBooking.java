@@ -4,43 +4,29 @@ import java.util.HashMap;
 public class demoBooking {
     public static void main(String[] args) {
 
-        Week week1 = new Week();
+        // Make hashmap for court
+        HashMap<Double, String> court1 = new HashMap<>();
 
-        Day monday = new Day();
-        Day tuesday = new Day();
-        Day wednesday = new Day();
-        Day thursday = new Day();
-        Day friday = new Day();
-        Day saturday = new Day();
-        Day sunday = new Day();
+        // Make hashmap for day
+        HashMap<String, HashMap<Double, String>> monday = new HashMap<>();
 
-        Court court1 = new Court();
-        Court court2 = new Court();
-        Court court3 = new Court();
-        Court court4 = new Court();
-        Court court5 = new Court();
+        // Make hash map for week
+        HashMap<String, HashMap<String,HashMap<Double, String>>> week1 = new HashMap<>();
 
-        HashMap<String, Day> daysOfWeek = new HashMap<String, Day>();
-        daysOfWeek.put("Monday", monday);
-        daysOfWeek.put("Tuesday", tuesday);
-        daysOfWeek.put("Wednesday", wednesday);
-        daysOfWeek.put("Thursday", thursday);
-        daysOfWeek.put("Friday", friday);
-        daysOfWeek.put("Saturday", saturday);
-        daysOfWeek.put("Sunday", sunday);
+        // Book a court for a time
+        court1.put(9.00, "Jeffries");
+        court1.put(9.30, "Carsons");
 
-        HashMap<String, Court> courtsOnDay = new HashMap<>();
-        courtsOnDay.put("Court 1", court1);
-        courtsOnDay.put("Court 2", court2);
-        courtsOnDay.put("Court 3", court3);
-        courtsOnDay.put("Court 4", court4);
-        courtsOnDay.put("Court 5", court5);
+        // Add the court bookings to a day
+        monday.put("Monday", court1);
 
+        // Add the day with associated bookings to week
+        week1.put("Week 1", monday);
 
-        //court2.bookCourt();
-        //court1.bookCourt();
-
-        court1.cancelBooking();
-
+        // Display all the bookings for a court on a day
+        for (String week : week1.keySet()) {
+            String bookings = "Day: "+week1.get("Week 1")+"\nCourts: "+week1.get("Monday")+"\nBookings: "+court1.get(9.00)+court1.get(9.30);
+            JOptionPane.showMessageDialog(null, "bookings");
+        }
     }
 }

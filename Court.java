@@ -3,17 +3,17 @@ import java.util.HashMap;
 
 public class Court {
 
-    private HashMap<String, String> aCourt = new HashMap<>();
+    private HashMap<Double, String> aCourt = new HashMap<>();
 
     // Get the time the user is booking for and check if there is already a booking
     public void bookCourt() {
-        String time;
-        time = JOptionPane.showInputDialog(null, "Please enter a time (hh:mm) you would like to book for: ");
+        double time;
+        time = Double.parseDouble(JOptionPane.showInputDialog(null, "Please enter a time (hh:mm) you would like to book for: "));
         checkIfAlreadyBooked(time);
     }
 
     // If the time already has a booking, ask them to pick a different time
-    public void checkIfAlreadyBooked(String time) {
+    public void checkIfAlreadyBooked(double time) {
         String alreadyBooked = "Sorry, this time already has a booking. Please pick a different time.";
         if (aCourt.containsKey(time)) {
             JOptionPane.showMessageDialog(null, alreadyBooked, "Already booked", JOptionPane.WARNING_MESSAGE);
@@ -42,11 +42,11 @@ public class Court {
 
     // Getters and setters
 
-    public HashMap<String, String> getaCourt() {
+    public HashMap<Double, String> getaCourt() {
         return aCourt;
     }
 
-    public void setaCourt(HashMap<String, String> aCourt) {
+    public void setaCourt(HashMap<Double, String> aCourt) {
         this.aCourt = aCourt;
     }
 
