@@ -25,7 +25,7 @@ public class demoBooking {
 
         // Display all the bookings for a court on a day
         for (String week : week1.keySet()) {
-            String bookings = "Day: "+week1.get("Monday")+"\nCourts: "+monday.get("Court 1")+"\nBookings: "+court1.get(9.00)+court1.get(9.30);
+            String bookings = "Day: "+week1.keySet()+"\nCourts: "+monday.keySet()+"\nBookings: "+court1.keySet();
             JOptionPane.showMessageDialog(null, bookings);
         }
     }
