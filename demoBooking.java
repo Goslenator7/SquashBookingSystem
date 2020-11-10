@@ -18,15 +18,15 @@ public class demoBooking {
         court1.put(9.30, "Carsons");
 
         // Add the court bookings to a day
-        monday.put("Monday", court1);
+        monday.put("Court 1", court1);
 
         // Add the day with associated bookings to week
-        week1.put("Week 1", monday);
+        week1.put("Monday", monday);
 
         // Display all the bookings for a court on a day
         for (String week : week1.keySet()) {
-            String bookings = "Day: "+week1.get("Week 1")+"\nCourts: "+week1.get("Monday")+"\nBookings: "+court1.get(9.00)+court1.get(9.30);
-            JOptionPane.showMessageDialog(null, "bookings");
+            String bookings = "Day: "+week1.get("Monday")+"\nCourts: "+monday.get("Court 1")+"\nBookings: "+court1.get(9.00)+court1.get(9.30);
+            JOptionPane.showMessageDialog(null, bookings);
         }
     }
 }
